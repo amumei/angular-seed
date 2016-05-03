@@ -1,0 +1,21 @@
+{
+  "name": "angular-seed",
+  "description": "Simple angular-seed",
+  "authors": [
+    "Amund Meisal <amundmeisal@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/amumei/angular-seed",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
+    "angular-route": "^1.5.5"
+  }
+}
