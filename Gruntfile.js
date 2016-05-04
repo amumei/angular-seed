@@ -2,7 +2,8 @@ module.exports = function(grunt){
 	"use strict";
 
 	var config = {
-		app: 'www'
+		app: 'www',
+		test: "test"
 	};
 
 	grunt.initConfig({
@@ -56,13 +57,18 @@ module.exports = function(grunt){
 			serve: ["connect:web","watch"]
 		},
 		jshint: {
-			files: ['Gruntfile.js', '<%= config.app %>/js/**/*.js'],
+			files: ['Gruntfile.js', '<%= config.app %>/js/**/*.js', '<%= config.test %>/**/*.js'],
 			options: {
 				globals: {
 					jQuery: true,
 					console: true,
 					angular: true
 				}
+			}
+		},
+		karma: {
+			unit: {
+				configFile: "<%= config.test %>/karma.conf.js"
 			}
 		}
 	});
@@ -74,6 +80,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks("grunt-contrib-connect");
 	grunt.loadNpmTasks("grunt-concurrent");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
+	grunt.loadNpmTasks("grunt-karma");
 
 
 	grunt.registerTask("jscheck", ["clean", "jshint"]);
