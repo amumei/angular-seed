@@ -84,5 +84,5 @@ module.exports = function(grunt){
 
 
 	grunt.registerTask("jscheck", ["clean", "jshint"]);
-	grunt.registerTask("default", ["clean", "uglify", "concurrent:serve"]);
+	grunt.registerTask("default", ["clean", "uglify", "sass", "concurrent:serve"]);
 };
