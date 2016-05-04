@@ -1,3 +1,11 @@
 # Angular-Seed
 
-Simple angular-seed using npm, Bower and Grunt
+This seed uses:
+
+* Npm
+* Bower
+* Grunt
+
+For testing:
+
+* Karma, Karma-Coverage & Jasmine
