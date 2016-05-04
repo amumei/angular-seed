@@ -4,6 +4,6 @@ node_modules/
 bower_components/
 coverage/
 .idea/
-main.css
-main.css.map
+*.css
+*.css.map
 www/js/dist/
