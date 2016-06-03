@@ -2,8 +2,8 @@ module.exports = function(grunt){
 	"use strict";
 
 	var config = {
-		app: 'www/app',
-		appAssets: 'www/assets',
+		app: "www/app",
+		appAssets: "www/assets",
         compiledJS: "www/assets/dist",
 		test: "test"
 	};
@@ -14,7 +14,7 @@ module.exports = function(grunt){
 
 		uglify: {
 			options: {
-				banner: '// <%= pkg.name %> - v<%= pkg.version %> (<%= grunt.template.today("yyyy-mm-dd") %>)\n',
+				banner: "// <%= pkg.name %> - v<%= pkg.version %> (<%= grunt.template.today('yyyy-mm-dd') %>)\n",
 				mangle: false,
 				sourceMap: true
 			},
@@ -26,8 +26,8 @@ module.exports = function(grunt){
 			}
 		},
 		clean: {
-			js: ['<%=config.compiledJS %>/*.min.js'],
-			sourceMap: ['<%=config.compiledJS %>/*.map']
+			js: ["<%=config.compiledJS %>/*.min.js"],
+			sourceMap: ["<%=config.compiledJS %>/*.map"]
 		},
 		sass: {
 			dev: {
@@ -49,6 +49,14 @@ module.exports = function(grunt){
 				tasks: ["clean", "uglify"]
 			}
 		},
+        jshint: {
+            files: ["Gruntfile.js", "server.js", "www/app/**/*.js", "test/**/*.js"],
+            options: {
+                globals: {
+                    jQuery: true
+                }
+            }
+        },
 		karma: {
 			unit: {
 				configFile: "<%= config.test %>/karma.conf.js"
@@ -61,6 +69,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-karma");
+    grunt.loadNpmTasks("grunt-contrib-jshint");
 
 
 	grunt.registerTask("default", ["clean", "uglify", "sass", "watch"]);
