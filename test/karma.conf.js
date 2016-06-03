@@ -13,11 +13,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      "www/bower_components/angular/angular.js",
-      "www/bower_components/angular-ui-router/release/angular-ui-router.js",
-      "www/bower_components/angular-mocks/angular-mocks.js",
-      'www/js/*.js',
-      'www/js/**/*.js',
+      "www/assets/bower_components/angular/angular.js",
+      "www/assets/bower_components/angular-ui-router/release/angular-ui-router.js",
+      "www/assets/bower_components/angular-mocks/angular-mocks.js",
+      'www/app/**/*.js',
       "test/unit/**/*.js"
     ],
 
@@ -64,11 +63,7 @@ module.exports = function(config) {
       // source files, that you wanna generate coverage for
       // do not include tests or libraries
       // (these files will be instrumented by Istanbul)
-      'www/js/*.js': ['coverage'],
-      'www/js/controllers/*.js': ['coverage'],
-      'www/js/directives/*.js': ['coverage'],
-      'www/js/factories/*.js': ['coverage'],
-      'www/js/services/*.js': ['coverage']
+      'www/app/**/*.js': ['coverage']
     },
 
     coverageReporter: {
@@ -79,6 +74,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };

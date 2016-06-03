@@ -1,15 +1,15 @@
 beforeEach(module("app"));
 
-describe("IndexCtrl", function(){
+describe("LandingPageCtrl", function(){
 	"use strict";
 	var scope, ctrl;
 
 	beforeEach(inject(function($controller){
 		scope = {};
-		ctrl = $controller("IndexCtrl", {$scope: scope});
+		ctrl = $controller("LandingPageCtrl", {$scope: scope});
 	}));
 
-	it("should define IndexCtrl", function(){
+	it("should define LandingPageCtrl", function(){
 		expect(ctrl).toBeDefined();
 	});
 });
